@@ -75,23 +75,26 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Arnaud\\.nuget\\packages\\": {},
+    "C:\\Users\\arnaud\\.nuget\\packages\\": {},
+    "C:\\Program Files\\DevExpress 23.2\\Components\\Offline Packages": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\Projects\\DatingApp\\API\\API.csproj",
+      "projectUniqueName": "C:\\Users\\arnaud\\Demo\\DatingApp\\API\\API.csproj",
       "projectName": "API",
-      "projectPath": "F:\\Projects\\DatingApp\\API\\API.csproj",
-      "packagesPath": "C:\\Users\\Arnaud\\.nuget\\packages\\",
-      "outputPath": "F:\\Projects\\DatingApp\\API\\obj\\",
+      "projectPath": "C:\\Users\\arnaud\\Demo\\DatingApp\\API\\API.csproj",
+      "packagesPath": "C:\\Users\\arnaud\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\arnaud\\Demo\\DatingApp\\API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
+        "C:\\Program Files\\DevExpress 23.2\\Components\\Offline Packages",
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Arnaud\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\arnaud\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 23.2.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -100,6 +103,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\DevExpress 23.2\\Components\\System\\Components\\Packages": {},
         "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
@@ -149,7 +153,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

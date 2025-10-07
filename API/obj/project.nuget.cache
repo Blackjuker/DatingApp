@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "6a48Epvkga8=",
+  "dgSpecHash": "4aLZmfkv2nk=",
   "success": true,
-  "projectFilePath": "F:\\Projects\\DatingApp\\API\\API.csproj",
+  "projectFilePath": "C:\\Users\\arnaud\\Demo\\DatingApp\\api\\API.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Arnaud\\.nuget\\packages\\microsoft.aspnetcore.openapi\\9.0.9\\microsoft.aspnetcore.openapi.9.0.9.nupkg.sha512",
-    "C:\\Users\\Arnaud\\.nuget\\packages\\microsoft.openapi\\1.6.17\\microsoft.openapi.1.6.17.nupkg.sha512"
+    "C:\\Users\\arnaud\\.nuget\\packages\\microsoft.aspnetcore.openapi\\9.0.9\\microsoft.aspnetcore.openapi.9.0.9.nupkg.sha512",
+    "C:\\Users\\arnaud\\.nuget\\packages\\microsoft.openapi\\1.6.17\\microsoft.openapi.1.6.17.nupkg.sha512"
   ],
   "logs": []
 }
