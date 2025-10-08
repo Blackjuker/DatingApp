@@ -13,14 +13,14 @@ namespace API.Controllers
         [HttpGet]
         public async Task<ActionResult<IReadOnlyList<AppUser>>> GetMembers()
         {
-            var users = context.Users.ToListAsync();
+            var users = await context.Users.ToListAsync();
             return Ok(users);
         }
 
         [HttpGet("{id}")] // localhost:5001/api/members/3
         public async Task<ActionResult<AppUser>> GetMember(string id)
         {
-            var user = context.Users.FindAsync(id);
+            var user = await context.Users.FindAsync(id);
             if (user == null) return NotFound();
             return Ok(user);
         }
