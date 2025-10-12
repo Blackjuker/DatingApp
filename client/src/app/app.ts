@@ -5,15 +5,18 @@ import { Nav } from "../layout/nav/nav";
 import { AccountService } from '../core/services/account-service';
 import { Home } from "../features/home/home";
 import { User } from '../types/user';
+import { Router, RouterOutlet } from '@angular/router';
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-root',
-  imports: [Nav, Home],
+  imports: [Nav, RouterOutlet, NgClass],// utilsier ngclass pour appliquer un style dnas le routerlink aux autres pages et non au home
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App implements OnInit {
   private accountService = inject(AccountService);
+  protected router = inject(Router);
   private http = inject(HttpClient);
   protected readonly title = signal('Dating App');
   protected members = signal<User[]>([]);

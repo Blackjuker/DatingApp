@@ -1,5 +1,17 @@
 <app-nav />
 
 
-<!-- <app-home [membersFromApp]="members()" /> -->
-<app-home  />
+<!-- <app-home [membersFromApp]="members()" /> 
+    ngclass si je veux un style conditionnel (ex: pas de margin top sur la home page, mais margin top sur les autres pages)
+-->
+<!-- <div [ngClass]="{'mt-24 container mx-auto':!(router.url === '/')}">
+    <router-outlet />
+</div> -->
+
+<div
+    [class.mt-24]="!(router.url === '/')"
+    [class.container]="!(router.url === '/')"
+    [class.mx-auto]="!(router.url === '/')"
+>
+    <router-outlet />
+</div>

@@ -1,0 +1,85 @@
+/* 🔥 Fond animé avec dégradé fluide */
+.animated-bg {
+  background: linear-gradient(-45deg, #ff6fb5, #ff8fab, #7e57c2, #64b5f6);
+  background-size: 400% 400%;
+  animation: gradientFlow 10s ease infinite;
+}
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* 💕 Cœurs animés */
+.heart {
+  position: absolute;
+  bottom: -10%;
+  width: 24px;
+  height: 24px;
+  background-color: rgba(255, 105, 180, 0.7);
+  transform: rotate(-45deg);
+  animation: floatHeart 8s infinite ease-in-out;
+}
+.heart::before,
+.heart::after {
+  content: "";
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  background-color: rgba(255, 105, 180, 0.7);
+  border-radius: 50%;
+}
+.heart::before { top: -12px; left: 0; }
+.heart::after { top: 0; left: 12px; }
+
+/* Délai pour variation */
+.delay-1 { animation-delay: 2s; }
+.delay-2 { animation-delay: 4s; }
+.delay-3 { animation-delay: 6s; }
+.delay-4 { animation-delay: 8s; }
+
+@keyframes floatHeart {
+  0% {
+    transform: translateY(0) rotate(-45deg) scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateY(-400px) rotate(-45deg) scale(1.4);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-800px) rotate(-45deg) scale(1);
+    opacity: 0;
+  }
+}
+
+/* ✨ Animations de texte et icône */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in-up { animation: fadeInUp 1.2s ease forwards; }
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-50px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-slide-down { animation: slideDown 1.3s ease forwards; }
+
+@keyframes zoomIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+.animate-zoom-in { animation: zoomIn 1.6s ease forwards; }
+
+@keyframes pulseGlow {
+  0%, 100% { transform: scale(1); filter: drop-shadow(0 0 10px #ffb6c1); }
+  50% { transform: scale(1.2); filter: drop-shadow(0 0 20px #ff69b4); }
+}
+.animate-pulse-glow { animation: pulseGlow 2.5s infinite ease-in-out; }
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.animate-fade-in { animation: fadeIn 2s ease forwards; }
