@@ -383,6 +383,7 @@ MigrationBackup/
 FodyWeavers.xsd
 
 # VS Code files for those working on multiple tools
+.vscode
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
@@ -483,6 +484,8 @@ $RECYCLE.BIN/
 # Vim temporary swap files
 *.swp
 /API/bin/
+/API/bin/*
 /API/obj/
+/API/obj/*
 /client/ssl/
-client/ssl/
+/client/ssl/*
