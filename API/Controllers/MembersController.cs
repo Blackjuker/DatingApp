@@ -5,7 +5,8 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
-{    
+{
+    [Authorize]
     public class MembersController(IMemberRepository memberRepository) : BaseApiController
     {
         [HttpGet]
@@ -14,7 +15,7 @@ namespace API.Controllers
             return Ok(await memberRepository.GetMembersAsync());
         }
 
-        [Authorize]
+
         [HttpGet("{id}")] // localhost:5001/api/members/3
         public async Task<ActionResult<Member>> GetMember(string id)
         {
@@ -29,4 +30,4 @@ namespace API.Controllers
             return Ok(await memberRepository.GetPhotosForMemberAsync(id));
         }
     }
-} 
+}
