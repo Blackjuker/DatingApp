@@ -1,0 +1,63 @@
+/* 💞 Animation du cœur qui marche */
+@keyframes heartwalk {
+  0% {
+    left: -10%;
+    transform: translateY(0) scale(1);
+  }
+  25% {
+    transform: translateY(-8px) scale(1.05);
+  }
+  50% {
+    left: 40%;
+    transform: translateY(0) scale(1);
+  }
+  75% {
+    transform: translateY(-8px) scale(1.05);
+  }
+  100% {
+    left: 45%;
+    transform: translateY(0) scale(1);
+  }
+}
+.animate-heartwalk {
+  animation: heartwalk 6s ease-in-out forwards;
+}
+
+/* 🌾 Foin qui roule */
+@keyframes tumbleweed {
+  0% {
+    right: -20%;
+    transform: rotate(0deg);
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    right: 120%;
+    transform: rotate(720deg);
+    opacity: 0;
+  }
+}
+.animate-tumbleweed {
+  animation: tumbleweed 10s linear infinite;
+}
+
+/* 💫 Apparition douce du texte */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in {
+  animation: fadeIn 2s ease-out 5s forwards; /* attend que le cœur finisse */
+  opacity: 0;
+}
+
+/* 👣 Petits rebonds du cœur */
+@keyframes bounceSlow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+.animate-bounce-slow {
+  animation: bounceSlow 1s infinite;
+}

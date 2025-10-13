@@ -1,4 +1,4 @@
-<div class="card bg-base-100 gap-3 w-4xl mx-auto flex flex-col items-center rounded-xl shadwo-xl p-10">
+<!-- <div class="card bg-base-100 gap-3 w-4xl mx-auto flex flex-col items-center rounded-xl shadwo-xl p-10">
    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-32 text-error">
   <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
 </svg>
@@ -7,4 +7,26 @@
     Sorry, what you are looking for cannot be found
  </p>
  <button class="btn btn-primary" (click)="goback()">Go back</button>
+</div> -->
+<div class="relative flex flex-col items-center justify-center min-h-screen bg-gradient-to-b from-pink-50 to-purple-100 overflow-hidden">
+
+  <!-- 💞 Monsieur cœur qui marche -->
+  <div class="absolute bottom-16 left-[-10%] flex items-center animate-heartwalk">
+    <div class="text-pink-600 text-5xl animate-bounce-slow">❤️</div>
+  </div>
+
+  <!-- 🌾 Foin qui roule -->
+  <div class="absolute bottom-12 right-[-15%] text-yellow-500 text-4xl animate-tumbleweed">☀️🌾</div>
+
+  <!-- 💔 Texte principal -->
+  <div class="text-center animate-fade-in mt-16">
+    <h1 class="text-6xl font-bold text-gray-800 mb-4">Not Found</h1>
+    <p class="text-xl text-gray-600 mb-8">
+      Our little heart couldn’t find what you’re looking for 💔
+    </p>
+    <button class="btn btn-primary btn-lg" (click)="goback()">Go Back</button>
+  </div>
 </div>
+<audio autoplay class="hidden">
+  <source src="assets/sounds/wind.mp3" type="audio/mpeg" />
+</audio>
