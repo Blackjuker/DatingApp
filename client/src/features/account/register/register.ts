@@ -30,6 +30,12 @@ export class Register implements OnInit {
       password: new FormControl('',[Validators.required, Validators.minLength(6),Validators.maxLength(20)]),
       confirmPassword: new FormControl('',[ Validators.required, this.matchValues('password')])
     });
+    // pour que le confirmPassword se mette à jour à chaque changement de password
+    this.registerForm.controls['password'].valueChanges.subscribe({
+      next:()=>{
+        this.registerForm.controls['confirmPassword'].updateValueAndValidity();
+      }
+    });
   }
 
   matchValues(matchTo:string){
