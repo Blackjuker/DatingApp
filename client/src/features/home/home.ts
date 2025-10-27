@@ -11,7 +11,7 @@ import { User } from '../../types/user';
 export class Home {
   //@Input({required:true}) membersFromApp : User[] = []; // input venant du parent app.ts
   // protected membersFromApp = input.required<User[]>(); // input venant du parent app.ts
-  protected registerMode = signal(false);
+  protected registerMode = signal(true);
 
   showRegister(value: boolean) {
     this.registerMode.set(value);

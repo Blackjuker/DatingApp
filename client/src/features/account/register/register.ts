@@ -1,6 +1,6 @@
 import { Component, inject, OnInit, output } from '@angular/core';
 import { RegisterCreds } from '../../../types/user';
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { AbstractControl, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { AccountService } from '../../../core/services/account-service';
 import { JsonPipe } from '@angular/common';
 
@@ -25,13 +25,22 @@ export class Register implements OnInit {
   initializeForm(){
     this.registerForm = new FormGroup({
       // définir les contrôles du formulaire ici
-      email: new FormControl(),
-      displayName: new FormControl(),
-      password: new FormControl(),
-      confirmPassword: new FormControl()
+      email: new FormControl('johndoe@test.com',[ Validators.required, Validators.email]),
+      displayName: new FormControl('',Validators.required),
+      password: new FormControl('',[Validators.required, Validators.minLength(6),Validators.maxLength(20)]),
+      confirmPassword: new FormControl('',[ Validators.required, this.matchValues('password')])
     });
   }
 
+  matchValues(matchTo:string){
+    return (control:AbstractControl) : Validators | null => {
+      const parent = control.parent;
+      if(!parent) return null;
+      const matchValue = parent.get(matchTo)?.value;
+      if(control.value === matchValue) return null;
+      return {isMatching:true};
+    }
+  }
   register(){
     console.log(this.registerForm.value);
     // this.accountService.register(this.creds).subscribe({
