@@ -46,7 +46,7 @@ export class ImageUpload {
 
   onUploadFile(){
     if(this.fileToUpload){
-      this.uploadFile.emit(this.fileToUpload)
+      this.uploadFile.emit(this.fileToUpload);
     }
   }
 

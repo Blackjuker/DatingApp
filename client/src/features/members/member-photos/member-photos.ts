@@ -3,15 +3,15 @@ import { MemberService } from '../../../core/services/member-service';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Member, Photo } from '../../../types/member';
-import { AsyncPipe } from '@angular/common';
 import { ImageUpload } from "../../../shared/image-upload/image-upload";
 import { AccountService } from '../../../core/services/account-service';
 import { User } from '../../../types/user';
 import { StarButton } from "../../../shared/star-button/star-button";
+import { DeleteButton } from "../../../shared/delete-button/delete-button";
 
 @Component({
   selector: 'app-member-photos',
-  imports: [AsyncPipe, ImageUpload, StarButton],
+  imports: [ImageUpload, StarButton, DeleteButton],
   templateUrl: './member-photos.html',
   styleUrl: './member-photos.css'
 })
@@ -20,7 +20,7 @@ export class MemberPhotos implements OnInit{
   private route = inject (ActivatedRoute);
   protected photos = signal<Photo[]>([]);
   protected loading = signal(false);
-  private accountService = inject(AccountService);
+  protected accountService = inject(AccountService);
   
   ngOnInit():void{
     const memberId = this.route.parent?.snapshot.paramMap.get('id');
@@ -59,6 +59,14 @@ this.memberService.member.update(member =>({
   imageUrl:photo.url
 }) as Member
 )
+      }
+    })
+  }
+
+  deletePhoto(photoId:number){
+    this.memberService.deletePhoto(photoId).subscribe({
+      next:()=>{
+        this.photos.update(photos => photos.filter(p => p.id !== photoId));
       }
     })
   }
