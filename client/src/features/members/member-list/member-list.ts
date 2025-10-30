@@ -53,7 +53,8 @@ export class MemberList implements OnInit {
 
   // Méthode appelée lors de la soumission des données de filtrage
   onFilterChange(data: MemberParams){
-    console.log('Filter data received:', data);
+    this.memberParams = data;
+    this.loadMembers();
   }
 
   resetFilters(){

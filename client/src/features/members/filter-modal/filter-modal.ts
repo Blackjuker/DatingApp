@@ -1,9 +1,10 @@
 import { Component, ElementRef, output, ViewChild } from '@angular/core';
 import { MemberParams } from '../../../types/member';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-filter-modal',
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './filter-modal.html',
   styleUrl: './filter-modal.css'
 })
@@ -13,6 +14,8 @@ export class FilterModal {
  closeModal = output(); // Événement de sortie pour fermer le modal
 
  submitData = output<MemberParams>(); // Événement de sortie pour soumettre les données
+ memberParams = new MemberParams(); // Paramètres de membre pour le formulaire  
+
 
  open() {
    this.modalRef.nativeElement.showModal(); // Ouvre le modal
@@ -23,7 +26,17 @@ export class FilterModal {
   }
 
   submit() {
-    this.submitData.emit(new MemberParams()); // Émet les données du formulaire
+    this.submitData.emit(this.memberParams); // Émet les données du formulaire
     this.close(); // Ferme le modal après la soumission
+  }
+
+  onMinAgeChange() {
+    if(this.memberParams.minAge < 18) this.memberParams.minAge = 18;
+  }
+
+  onMaxAgeChange() {
+    if(this.memberParams.maxAge < this.memberParams.minAge){
+      this.memberParams.maxAge = this.memberParams.minAge;
+    }
   }
 }
